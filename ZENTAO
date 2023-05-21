@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cafetería Zentao</title>
+  <style>
+    /* Estilos CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .menu-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+    .menu-item input[type="text"] {
+      margin-right: 10px;
+    }
+    #menu-list {
+      list-style-type: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cafetería Zentao</h1>
+  </header>
+
+  <div id="menu">
+    <h2>Menú</h2>
+    <ul id="menu-list">
+      <!-- Aquí se mostrarán los elementos del menú -->
+    </ul>
+    <button id="add-item-btn">Agregar Producto</button>
+  </div>
+
+  <script>
+    // JavaScript para manejar la funcionalidad de agregar productos al menú
+    document.addEventListener("DOMContentLoaded", function() {
+      var addButton = document.getElementById("add-item-btn");
+      addButton.addEventListener("click", function() {
+        var menuList = document.getElementById("menu-list");
+        var listItem = document.createElement("li");
+        listItem.className = "menu-item";
+
+        var inputName = document.createElement("input");
+        inputName.type = "text";
+        inputName.placeholder = "Nombre del producto";
+        listItem.appendChild(inputName);
+
+        var inputPrice = document.createElement("input");
+        inputPrice.type = "text";
+        inputPrice.placeholder = "Precio";
+        listItem.appendChild(inputPrice);
+
+        menuList.appendChild(listItem);
+      });
+    });
+  </script>
+</body>
+</html>
